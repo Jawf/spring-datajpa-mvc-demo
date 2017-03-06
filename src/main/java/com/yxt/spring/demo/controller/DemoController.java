@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yxt.spring.demo.service.UserService;
 
+
 @Controller
 @RequestMapping("/")
 public class DemoController {
