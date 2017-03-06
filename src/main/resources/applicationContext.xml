@@ -16,19 +16,10 @@
 		 http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
 		 http://www.springframework.org/schema/data/jpa  
          http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+     
 	<!-- 开启IOC注解扫描 -->
 	<context:component-scan base-package="com.yxt.spring.demo" />
 	
-	<!-- <bean id="entityManagerFactory"
-		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="jpaVendorAdapter">
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-				<property name="generateDdl" value="true" />
-				<property name="database" value="MYSQL" />
-			</bean>
-		</property>
-		<property name="persistenceUnitName" value="demo" />
-	</bean> -->
 	<!-- 开启MVC注解扫描 -->
 	<mvc:annotation-driven />
 	<bean
@@ -37,7 +28,7 @@
 			<list>
 				<bean
 					class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-					<property name="prefix" value="/WEB-INF/view/" />
+					<property name="prefix" value="/page/" />
 					<property name="suffix" value=".html" />
 				</bean>
 			</list>
@@ -54,6 +45,16 @@
 	<mvc:default-servlet-handler />
 	
 	<!-- 配置事务管理器 -->
+	<!-- <bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="generateDdl" value="true" />
+				<property name="database" value="MYSQL" />
+			</bean>
+		</property>
+		<property name="persistenceUnitName" value="demo" />
+	</bean> -->
 	<!-- <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>

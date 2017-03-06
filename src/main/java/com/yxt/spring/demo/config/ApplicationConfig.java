@@ -26,7 +26,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.alibaba.druid.pool.DruidDataSource;
 
 /**
- * MallConfig
+ * Application Configuration by Annotation
  */
 @Configuration
 @EnableTransactionManagement
@@ -47,30 +47,6 @@ public class ApplicationConfig {
 
     @Value("${db.password}")
     private String password;
-
-    /*@Value("${zhibo.mysql.initialSize}")
-    private String initialSize;
-
-    @Value("${zhibo.mysql.minIdle}")
-    private String minIdle;
-
-    @Value("${zhibo.mysql.maxActive}")
-    private String maxActive;
-
-    @Value("${zhibo.mysql.maxWait}")
-    private String maxWait;
-
-    @Value("${zhibo.mysql.timeBetweenEvictionRunsMillis}")
-    private String timeBetweenEvictionRunsMillis;
-
-    @Value("${zhibo.mysql.minEvictableIdleTimeMillis}")
-    private String minEvictableIdleTimeMillis;
-
-    @Value("${zhibo.mysql.poolPreparedStatements}")
-    private String poolPreparedStatements;
-
-    @Value("${zhibo.mysql.maxPoolPreparedStatementPerConnectionSize}")
-    private String maxPoolPreparedStatementPerConnectionSize;*/
 
     @Bean
     public static PropertySourcesPlaceholderConfigurer zhiboPropertyPlaceholderConfigurer() {
@@ -124,7 +100,7 @@ public class ApplicationConfig {
         properties.put("hibernate.show_sql", false);
         properties.put("hibernate.format_sql", false);
         properties.put("hibernate.ejb.entitymanager_factory_name", "entityManagerFactory");
-//        properties.put("hibernate.hbm2ddl.auto", "none");
+        properties.put("hibernate.hbm2ddl.auto", "update");
         factory.setJpaProperties(properties);
         factory.afterPropertiesSet();
 
