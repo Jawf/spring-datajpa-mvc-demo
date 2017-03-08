@@ -29,6 +29,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public List<User> findByNameLike(String name) {
+		return userDao.findByGivenQuery(name + "%");
+	}
+	
+	@Override
 	public List<User> findByIdGreaterThanAndNameLike(Integer id, String name) {
 		return userDao.findByIdGreaterThanAndNameLike(id, name + "%");
 	}

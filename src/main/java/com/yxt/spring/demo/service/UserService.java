@@ -13,4 +13,6 @@ public interface UserService {
 	List<User> findAll();
 
 	List<User> findByIdGreaterThanAndNameLike(Integer id, String name);
+
+	List<User> findByNameLike(String name);
 }

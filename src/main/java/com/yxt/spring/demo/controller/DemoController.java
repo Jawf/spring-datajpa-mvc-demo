@@ -75,4 +75,15 @@ public class DemoController {
 		map.put("data", userService.findByIdGreaterThanAndNameLike(id, name));
 		return map;
 	}
+	
+	@RequestMapping("/findname")
+	@ResponseBody
+	public Map<String, Object> findByIdGreaterThanAndNameLike(String name) {
+		if (name == null)
+			return null;
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("state", "success");
+		map.put("data", userService.findByNameLike(name));
+		return map;
+	}
 }
