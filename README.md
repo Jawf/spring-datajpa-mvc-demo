@@ -10,4 +10,4 @@ git clone https://github.com/Jawf/spring-datajpa-mvc-demo.git
      `mvn clean package`
 - 4. run maven command to start embedded tomcat7: 
      `mvn tomcat7:run`
-
+- 5. open url: `http://localhost:8080/SpringMvcDataJPA/` for testing
