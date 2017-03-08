@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.yxt.spring.demo.service.UserService;
 
@@ -26,6 +27,14 @@ public class DemoController {
 	@RequestMapping("/info")
 	public String info() {
 		return "info";
+	}
+	
+
+	@RequestMapping("/infoview")
+	public ModelAndView infoView() {
+		ModelAndView modelAndView = new ModelAndView("info");
+		modelAndView.addObject("name", "Sam");
+		return modelAndView;
 	}
 
 	@RequestMapping("/findall")

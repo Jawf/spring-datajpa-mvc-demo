@@ -1,4 +1,4 @@
-package com.yxt.spring.demo.impl;
+package com.yxt.spring.demo.service;
 
 import java.util.List;
 
@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.yxt.spring.demo.entity.User;
 import com.yxt.spring.demo.repository.UserRepository;
-import com.yxt.spring.demo.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
